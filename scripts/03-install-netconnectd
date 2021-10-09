@@ -6,8 +6,8 @@ export LC_ALL=C
 source /common.sh
 install_cleanup_trap
 
-echo "Installing hostapd dnsmasq logrotate rfkill..."
-apt install --yes hostapd dnsmasq logrotate rfkill
+echo "Installing hostapd dnsmasq logrotate rfkill python3-pip..."
+apt install --yes hostapd dnsmasq logrotate rfkill python3-pip
 echo "Disabling default hostapd and dnsmasq services post install..."
 update-rc.d -f hostapd remove
 update-rc.d -f dnsmasq remove 
