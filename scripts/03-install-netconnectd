@@ -19,7 +19,7 @@ echo "Installing netconnectd..."
 cd /home/pi/
 git clone https://github.com/mrbeam/netconnectd_mrbeam
 cd netconnectd_mrbeam
-sudo python setup.py install
-sudo python setup.py install_extras
+sudo -u pi python setup.py install
+sudo -u pi python setup.py install_extras
 echo "Installing OctoPrint-Netconnectd plugin..."
 sudo -u pi /home/pi/oprint/bin/pip install https://github.com/mrbeam/OctoPrint-Netconnectd/archive/refs/heads/develop.zip
