@@ -20,6 +20,7 @@ git clone https://github.com/mrbeam/netconnectd_mrbeam
 cd netconnectd_mrbeam
 python3 setup.py install
 deactivate
+mkdir /etc/netconnectd.conf.d
 cp ./extras/netconnectd.yaml /etc/netconnectd.conf.d/netconnectd.yaml
 cp ./extras/netconnectd.service /etc/systemd/system/netconnectd.service
 systemctl enable netconnectd.service
