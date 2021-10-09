@@ -13,7 +13,7 @@ printf "timeout 60;" >> /etc/dhcp/dhclient.conf
 echo "Installing netconnectd..."
 mkdir /usr/local/netconnectd
 python3 -m virtualenv --python=python3 /usr/local/netconnectd/venv
-source /usr/local/netconnectd/venv/activate
+source /usr/local/netconnectd/venv/bin/activate
 pip install https://github.com/ManuelMcLure/wifi/archive/refs/heads/master.zip
 cd /home/pi/
 git clone https://github.com/mrbeam/netconnectd_mrbeam
