@@ -21,6 +21,8 @@ cd netconnectd_mrbeam
 python3 setup.py install
 deactivate
 mkdir /etc/netconnectd.conf.d
+cp /usr/sbin/hostapd /etc/netconnectd.conf.d/hostapd
+cp /usr/sbin/hostapd /etc/netconnectd.conf.d/dnsmasq
 cp ./extras/netconnectd.yaml /etc/netconnectd.conf.d/netconnectd.yaml
 cp ./extras/netconnectd.service /etc/systemd/system/netconnectd.service
 systemctl enable netconnectd.service
