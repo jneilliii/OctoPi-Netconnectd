@@ -6,11 +6,11 @@ export LC_ALL=C
 source /common.sh
 install_cleanup_trap
 
-echo "Installing hostapd dnsmasq logrotate rfkill python3-pip..."
+echo_green "Installing hostapd dnsmasq logrotate rfkill python3-pip..."
 apt install --yes hostapd dnsmasq logrotate rfkill python3-pip
-echo "Adding 60 second timeout to dhclient.conf..."
+echo_green "Adding 60 second timeout to dhclient.conf..."
 printf "timeout 60;" >> /etc/dhcp/dhclient.conf
-echo "Installing netconnectd..."
+echo_green "Installing netconnectd..."
 mkdir /usr/local/netconnectd
 python3 -m virtualenv --python=python3 /usr/local/netconnectd/venv
 source /usr/local/netconnectd/venv/bin/activate
@@ -26,9 +26,9 @@ mkdir /etc/netconnectd.conf.d/dnsmasq
 cp ./extras/netconnectd.yaml /etc/netconnectd.conf.d/netconnectd.yaml
 cp ./extras/netconnectd.service /etc/systemd/system/netconnectd.service
 systemctl enable netconnectd.service
-echo "Disabling dnsmasq and wpa_supplicant services post install..."
+echo_green "Disabling dnsmasq and wpa_supplicant services post install..."
 systemctl disable dnsmasq.service
 systemctl disable wpa_supplicant
 cp ./extras/eth0 /etc/network/interfaces.d/eth0
-echo "Installing OctoPrint-Netconnectd plugin..."
+echo_green "Installing OctoPrint-Netconnectd plugin..."
 sudo -u pi /home/pi/oprint/bin/pip install https://github.com/mrbeam/OctoPrint-Netconnectd/archive/refs/heads/develop.zip
