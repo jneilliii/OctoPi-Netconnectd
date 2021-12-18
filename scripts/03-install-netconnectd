@@ -16,7 +16,7 @@ python3 -m virtualenv --python=python3 /usr/local/netconnectd/venv
 source /usr/local/netconnectd/venv/bin/activate
 pip install https://github.com/ManuelMcLure/wifi/archive/refs/heads/master.zip
 cd /home/pi/
-git clone https://github.com/mrbeam/netconnectd_mrbeam
+sudo -u pi git clone https://github.com/ManuelMcLure/netconnectd_mrbeam.git
 cd netconnectd_mrbeam
 python3 setup.py install
 deactivate
@@ -31,4 +31,4 @@ systemctl disable dnsmasq.service
 systemctl disable wpa_supplicant
 cp ./extras/eth0 /etc/network/interfaces.d/eth0
 echo_green "Installing OctoPrint-Netconnectd plugin..."
-sudo -u pi /home/pi/oprint/bin/pip install https://github.com/mrbeam/OctoPrint-Netconnectd/archive/refs/heads/develop.zip
+sudo -u pi /home/pi/oprint/bin/pip install https://github.com/ManuelMcLure/OctoPrint-Netconnectd/archive/refs/heads/master.zip
