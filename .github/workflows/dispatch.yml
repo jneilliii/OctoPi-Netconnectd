@@ -51,8 +51,8 @@ jobs:
       with:
         token: ${{ secrets.REPODISPATCH_TOKEN }}
         repository: jneilliii/OctoPi-Netconnectd
+        event-type: octoprint_release
+        client-payload: '{"version": "${{ steps.octoprint_latestrelease.outputs.release }}"}'
     - uses: gautamkrishnar/keepalive-workflow@v2
       with:
         use_api: true
-        event-type: octoprint_release
-        client-payload: '{"version": "${{ steps.octoprint_latestrelease.outputs.release }}"}'
